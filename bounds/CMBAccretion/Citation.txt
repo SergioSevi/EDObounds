@@ -1,0 +1,13 @@
+#Fig.7 in ArXiv:2403.13072
+#CMB bounds due to accretion of baryonic mater around EDOs, altering recombination history.
+
+@article{Croon:2024rmw,
+    author = "Croon, Djuna and Sevillano Mu\~noz, Sergio",
+    title = "{Cosmic microwave background constraints on extended dark matter objects}",
+    eprint = "2403.13072",
+    archivePrefix = "arXiv",
+    primaryClass = "astro-ph.CO",
+    reportNumber = "IPPP/24/11",
+    month = "3",
+    year = "2024"
+}

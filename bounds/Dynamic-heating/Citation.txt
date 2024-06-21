@@ -1,0 +1,12 @@
+#Fig.5 right in ArXiv:2404.01378
+
+
+@article{Graham:2024hah,
+    author = "Graham, Peter W. and Ramani, Harikrishnan",
+    title = "{Constraints on Dark Matter from Dynamical Heating of Stars in Ultrafaint Dwarfs. Part 2: Substructure and the Primordial Power Spectrum}",
+    eprint = "2404.01378",
+    archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
+    month = "4",
+    year = "2024"
+}
