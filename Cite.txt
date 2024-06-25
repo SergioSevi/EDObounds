@@ -1,0 +1,61 @@
+These are the items to cite in your plot:
+ \cite{Croon:2024rmw,Croon:2020wpr,Croon:2020ouk,Graham:2024hah}
+
+These are the bibitems to add to your mybib file: 
+ 
+ @article{Croon:2024rmw,
+ author = "Croon, Djuna and Sevillano Mu\~noz, Sergio",
+ title = "{Cosmic microwave background constraints on extended dark matter objects}",
+ eprint = "2403.13072",
+ archivePrefix = "arXiv",
+ primaryClass = "astro-ph.CO",
+ reportNumber = "IPPP/24/11",
+ month = "3",
+ year = "2024"
+ };
+
+ 
+ 
+ @article{Croon:2020wpr,
+ author = "Croon, Djuna and McKeen, David and Raj, Nirmal",
+ title = "{Gravitational microlensing by dark matter in extended structures}",
+ eprint = "2002.08962",
+ archivePrefix = "arXiv",
+ primaryClass = "astro-ph.CO",
+ doi = "10.1103/PhysRevD.101.083013",
+ journal = "Phys. Rev. D",
+ volume = "101",
+ number = "8",
+ pages = "083013",
+ year = "2020"
+ };
+
+ 
+ 
+ @article{Croon:2020ouk,
+ author = "Croon, Djuna and McKeen, David and Raj, Nirmal and Wang, Zihui",
+ title = "{Subaru-HSC through a different lens: Microlensing by extended dark matter structures}",
+ eprint = "2007.12697",
+ archivePrefix = "arXiv",
+ primaryClass = "astro-ph.CO",
+ doi = "10.1103/PhysRevD.102.083021",
+ journal = "Phys. Rev. D",
+ volume = "102",
+ number = "8",
+ pages = "083021",
+ year = "2020"
+ };
+
+ 
+ 
+ 
+ @article{Graham:2024hah,
+ author = "Graham, Peter W. and Ramani, Harikrishnan",
+ title = "{Constraints on Dark Matter from Dynamical Heating of Stars in Ultrafaint Dwarfs. Part 2: Substructure and the Primordial Power Spectrum}",
+ eprint = "2404.01378",
+ archivePrefix = "arXiv",
+ primaryClass = "hep-ph",
+ month = "4",
+ year = "2024"
+ };
+
