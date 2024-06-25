@@ -1,6 +1,6 @@
 ## EDObounds
 
- [![arXiv](https://img.shields.io/badge/arXiv-2007.10722-B31B1B.svg)](...) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+ [![arXiv](https://img.shields.io/badge/arXiv----B31B1B.svg)](...) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 *A collection of bounds on extended dark matter objects (EDOs) and code for plotting them.*
 
