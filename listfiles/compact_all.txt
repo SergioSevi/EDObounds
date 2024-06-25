@@ -1,7 +1,7 @@
 #Shape: (Choose from NFW, Uniform, Boson or UCMH)
 NFW
 
-#Radius (N): rmin, rmax, rjumps, where R_90=10^N RSun
+#Radius (N): rmin, rmax, rjumps, where R_90=10^N RSun 
 		-5	-2	1
 
 # Bound,     linestyle,  x,         y,        rotation, display name
