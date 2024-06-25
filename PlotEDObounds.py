@@ -79,8 +79,11 @@ colours=[(0.698039,0.0156863,0.), (0.937255,0.627451,0.168627),
 
 def addConstraint(boundID,x = 1e-30,y=1e-4,ang=0, linestyle='-', labeltext=''):
     cc=0
+    bounds_on = 0
     for radius in range(int(limits[0]),int(limits[1])+1,int(limits[2])):
         m, f = tools.load_bound(boundID,shape,radius)
+        if min(f)<1:
+            bounds_on = 1
         col=colours[cc]
         cc=cc+1
         plt.fill_between(m , f, 1e10, alpha=alpha_val, color=col)
@@ -92,7 +95,8 @@ def addConstraint(boundID,x = 1e-30,y=1e-4,ang=0, linestyle='-', labeltext=''):
                      label='$10^{{{}}} R_\\odot$'.format(radius) if not radius==1 and not radius==0 else str(1+9*radius)+'$R_\\odot$')
         else:
             plt.plot(m, f, color=col, lw=linewidth, linestyle=linestyle)
-    if (x > 1e-20):
+    if x > 1e-20 and bounds_on == 1:
+        print(boundID)
         plt.text(x, y, labeltext.replace("_", " "), rotation=ang, fontsize=12, ha='center', va='center')
 
 
