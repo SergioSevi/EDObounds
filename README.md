@@ -34,7 +34,7 @@ python PlotEDObounds.py -listfile LIST_FILE -outfile OUT_FILE
 where `LIST_FILE` is a text file containing a list of bounds to be plotted (see `listfiles/list_all.txt` for an example) and `OUT_FILE` is the full filename of the image to be output (e.g. `plots/PBHbounds.pdf`). You can use the short flags `-lf` and `-of` for specifying the list file and output file.
 
 
-This code is an extension of Bradley Kavanagh's pbh bounds repository. Among the new additions, this code automatically generates the list of citations for all bounds appearing in the created plot in a file called "Cite.txt".
+This code is an extension of Bradley Kavanagh's [pbhbounds](https://github.com/bradkav/PBHbounds) repository. Among the new additions, this code automatically generates the list of citations for all bounds appearing in the created plot in a file called "Cite.txt".
 ### Versions
 
 **Version 1.0 (25/06/2024):** Release version. Created for the paper.
