@@ -11,4 +11,4 @@ CMBAccretion	-	700	1e-3	-85	CMB
 #Subaru-HSC	--	1e-9	3e-3	0	Subaru-HSC
 Lensing		-	1e-5	3e-3	0	Lensing
 #Dynamic-heating	-	50	5e-2	-65	Dynamic_Heating
-#LVK	--	1e-9	3e-3	0	LVK
+#LVK	--	1.5e1	8e-5	0	LVK
