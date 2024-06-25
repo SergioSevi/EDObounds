@@ -41,5 +41,5 @@ This code is an extension of Bradley Kavanagh's [pbhbounds](https://github.com/b
 
 ### Citation
 
-Feel free to use the bounds and code, but please make sure of citing all of the individual plotted bounds (the bibitems for this is automatically generated in the "Cite.txt" file) and this repository through the paper.
+Feel free to use the bounds and code, but please make sure to cite all of the individual plotted bounds (the bibitems for this are automatically generated in the "Cite.txt" file) and this repository through the paper.
 
