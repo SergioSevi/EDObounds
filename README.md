@@ -4,7 +4,7 @@
 
 *A collection of bounds on extended dark matter objects (EDOs) and code for plotting them.*
 
- ![All PBH bounds](plots/all_bounds.png)
+ ![All PBH bounds](plots/all_bounds.pdf)
 
 
 ### Bounds
