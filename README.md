@@ -4,7 +4,7 @@
 
 *A collection of bounds on extended dark matter objects (EDOs) and code for plotting them.*
 
- ![All PBH bounds](plots/p.pdf)
+ ![All PBH bounds](plots/all_bounds.png)
 
 
 ### Bounds
@@ -17,7 +17,7 @@ In Section 3 of the paper we explain in detail how to use the code.
 
 If you'd like to contribute to the repository with new bounds, you can either:
 1. Make the changes yourself:
-	* Add the new bound as a folder in the [bounds/](bounds/) folder, containing one sub-folder for each shape (you don't need to have bounds for all) and one ".txt" file with the bibitem of your paper and a small comment linking the source of the bounds. Inside each sub-folder, include one ".txt" file for each provided radius, names "rN.txt", where N is given by $R_{90}=10^N R_{\odot}$ (for negative exponentials write a hyphen, e.g., $r-1.txt" for $R_{90}=10^-1R_{\odot}$). Each file should have two columns, corresponding to the EDO mass in Solar masses, and the constraint on the EDO fraction.
+	* Add the new bound as a folder in the [bounds/](bounds/) folder, containing one sub-folder for each shape (you don't need to have bounds for all) and one ".txt" file with the bibitem of your paper and a small comment linking the source of the bounds. Inside each sub-folder, include one ".txt" file for each provided radius, names "rN.txt", where N is given by $R_{90}=10^N R_{\odot}$ (for negative exponentials write a hyphen, e.g., $r-1.txt" for $R_{90}=10^{-1}R_{\odot}$). Each file should have two columns, corresponding to the EDO mass in Solar masses, and the constraint on the EDO fraction.
 	* Update the [bounds/README.md](https://github.com/SergioSevi/EDObounds/blob/master/bounds/README.md) file with information about the new bound.
 	* Submit a pull request
 2. Create an issue here on the github repository with a link to the paper/bound you believe taht is missing.  
