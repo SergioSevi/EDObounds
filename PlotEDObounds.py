@@ -37,24 +37,24 @@ parser.add_argument('-lf','--listfile', help='File containing list of bounds to 
 parser.add_argument('-of','--outfile', help='Filename (with extension) of output plot', 
                     type=str, default=outfile_default)
                     
-parser.add_argument('-dark', '--dark', dest='dark', action='store_true')
-parser.set_defaults(dark=False)
 
 args = parser.parse_args()
 listfile = args.listfile
 outfile = args.outfile
 
-DARKMODE = args.dark
+#This small routine gets all lines in the listfile starting with a #, which will be used to identify the shape, radius and constraints.
+with open(listfile, 'r') as file:
+    # Read the contents line by line into a list
+    lines = file.readlines()
+
+hash_line_indices = [index for index, line in enumerate(lines) if line.startswith('#')]
+
 
 alpha_val = 0.03
-if (DARKMODE):
-    plt.style.use('dark_background')
-    alpha_val = 0.35
-table_row_start=7
 shape=np.loadtxt(listfile,usecols=(0,),dtype=str)[0]
-limits=np.loadtxt(listfile,skiprows=(table_row_start-3), usecols=(0,1,2),dtype=str)[0]
+limits=np.loadtxt(listfile,skiprows=(hash_line_indices[1]+1), usecols=(0,1,2),dtype=str)[0]
 Lensinglist=['EROS-2','OGLE-IV','Subaru-HSC']
-
+table_row_start = hash_line_indices[2]+1
 
 bounds = np.loadtxt(listfile,skiprows=table_row_start, usecols=(0,), dtype=str)
 lines = np.loadtxt(listfile, skiprows=table_row_start,usecols=(1,), dtype=str)
