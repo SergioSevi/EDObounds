@@ -29,7 +29,7 @@ Some example plots for different EDO radius and shapes can be found in the [plot
 
 You can produce new plots with
 ```
-python PlotEDObounds.py -listfile LIST_FILE -outfile OUT_FILE
+python PlotEDObounds.py --listfile LIST_FILE --outfile OUT_FILE
 ```
 where `LIST_FILE` is a text file containing a list of bounds to be plotted (see `listfiles/list_all.txt` for an example) and `OUT_FILE` is the full filename of the image to be output (e.g. `plots/PBHbounds.pdf`). You can use the short flags `-lf` and `-of` for specifying the list file and output file.
 
