@@ -9,7 +9,7 @@
 
 ### Bounds
 
-The list of all available, tabulated bounds can be found in the [bounds/](bounds/) folder, with a dedicated sub-folder for each shape: NFW subhalos, boson stars, uniform spheres and ultra-compact minihalos (see the [paper](https://arxiv.org/abs/2407.02573) for a description of their density functions).
+The list of all available, tabulated bounds can be found in the [bounds/](bounds/) folder, with a dedicated sub-folder for each shape: NFW subhalos, boson stars, uniform spheres and ultra-compact minihalos (see the [paper](https://arxiv.org/abs/2407.02573) for a description of their density functions). You can use the listfile function "All" to produce the minimum of all bounds.
 
 In Section 3 of the [paper](https://arxiv.org/abs/2407.02573) we explain in detail how to use the code.
 
