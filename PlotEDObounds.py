@@ -185,7 +185,7 @@ ax.xaxis.tick_bottom()
 ax.xaxis.set_tick_params(pad=5)
 legend_tst = 0
 for i in range(len(bounds)):  
-    if lines[i] == 'None' or legend_tst == 1:
+    if lines[i] != '-' or legend_tst == 1:
         addConstraint(bounds[i], x = xlist[i], y = ylist[i], ang=anglist[i], linestyle=lines[i], labeltext=labellist[i], legend_on = 0)
     else: 
         addConstraint(bounds[i], x = xlist[i], y = ylist[i], ang=anglist[i], linestyle=lines[i], labeltext=labellist[i], legend_on = 1)
