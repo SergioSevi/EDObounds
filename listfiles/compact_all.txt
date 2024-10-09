@@ -1,15 +1,16 @@
 #Shape: (Choose from NFW, Uniform, Boson or UCMH)
 NFW
 
-#Radius (N): rmin, rmax, rjumps, where R_90=10^N RSun 
+#Radius (N): rmin, rmax, rjumps, where R_90=10^N RSun
 		-5	-2	1
 
 # Bound,     linestyle,  x,         y,        rotation, display name
-CMBAccretion	-	700	1e-3	-85	CMB
+CMBAccretion	--	700	1e-3	-85	CMB
 EROS-2		--	1e-2	1e-2	0	EROS-2
 OGLE-IV		--	1e-5	7e-3	0	OGLE-IV
 Subaru-HSC	--	1e-9	3e-3	0	Subaru-HSC
-Lensing		-	1e-5	3e-3	0	Lensing
-Dynamic-heating	--	50	5e-2	-65	Dynamic_Heating
-LVK	-	1.5e1	8e-5	0	LVK
+#Lensing		None	1e-5	3e-3	0	Lensing
+#Dynamic-heating	--	50	5e-2	-65	Dynamic_Heating
+LVK	--	1.5e1	8e-5	0	LVK
 Binary-evaporation	None 		70	8e-3	-70	Binary_evap.
+All 			- 		5 	5 	5 _	
