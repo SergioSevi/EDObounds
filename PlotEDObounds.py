@@ -4,6 +4,7 @@ import matplotlib as mpl
 
 import argparse
 import tools
+import os
 
 #Specify the plot style
 mpl.rcParams.update({'font.size': 16,'font.family':'serif'})
@@ -37,6 +38,17 @@ parser.add_argument('-lf','--listfile', help='File containing list of bounds to 
 parser.add_argument('-of','--outfile', help='Filename (with extension) of output plot', 
                     type=str, default=outfile_default)
                     
+#Get the full list of bounds for plotting altogether
+directory = "bounds/"
+all_bounds = [f for f in os.listdir(directory) if os.path.isdir(os.path.join(directory, f))]
+
+
+def safe_length(arg):
+    try:
+        length=len(arg)
+    except: 
+        length=1
+    return length
 
 args = parser.parse_args()
 listfile = args.listfile
@@ -54,6 +66,7 @@ alpha_val = 0.03
 shape=np.loadtxt(listfile,usecols=(0,),dtype=str)[0]
 limits=np.loadtxt(listfile,skiprows=(hash_line_indices[1]+1), usecols=(0,1,2),dtype=str)[0]
 Lensinglist=['EROS-2','OGLE-IV','Subaru-HSC']
+All_list=['EROS-2','OGLE-IV','Subaru-HSC']
 table_row_start = hash_line_indices[2]+1
 
 bounds = np.loadtxt(listfile,skiprows=table_row_start, usecols=(0,), dtype=str)
@@ -63,12 +76,22 @@ ylist = np.loadtxt(listfile, skiprows=table_row_start,usecols=(3,))
 anglist = np.loadtxt(listfile, skiprows=table_row_start,usecols=(4,))
 labellist = np.loadtxt(listfile, skiprows=table_row_start,usecols=(5,), dtype=str)
 
+#I'm not very good with python, this was the easiest way of taking the length of the bounds list when there is only one element in 
+
+    # Check if input_data is a list, if not, convert it to a list
+if safe_length(bounds) == 1:
+    bounds = [bounds, 'NA']  # Wrap the single element in a list
+    lines = np.append(lines, 'None')
+    xlist = np.append(xlist, 3)
+    ylist = np.append(ylist, 3)
+    anglist = np.append(anglist, 3)
+    labellist = np.append(labellist, '_')
+
 colours=[(0.698039,0.0156863,0.), (0.937255,0.627451,0.168627),
          (0.72549,0.8,0.0705882),
          (0.317647,0.490196,0.0784314),(0.172549,0.360784,0.0705882),
          (0.360784,0.407843,0.533333),(0.227451,0.239216,0.45098),
          (0.0980392,0.0666667,0.25098),(0.560784,0.52549,0.564706),(0.921569,0.494118,0.431373)]
-
 
 # if (DARKMODE):
 #     for i, col in enumerate(colors):
@@ -77,24 +100,24 @@ colours=[(0.698039,0.0156863,0.), (0.937255,0.627451,0.168627),
 #         if (col == "C2"):
 #             colors[i] = "C6"
 
-def addConstraint(boundID,x = 1e-30,y=1e-4,ang=0, linestyle='-', labeltext=''):
+def addConstraint(boundID,x = 1e-30,y=1e-4,ang=0, linestyle='-', labeltext='', legend_on=1):
     cc=0
     bounds_on = 0
+    
     for radius in range(int(limits[0]),int(limits[1])+1,int(limits[2])):
         m, f = tools.load_bound(boundID,shape,radius)
         if min(f)<1:
             bounds_on = 1
-        col=colours[cc]
-        cc=cc+1
-        plt.fill_between(m , f, 1e10, alpha=alpha_val, color=col)
-        linewidth = 1.0
-
-        if boundID == bounds[0]:
-
-            plt.plot(m, f, color=col, lw=linewidth, linestyle=linestyle,
-                     label='$10^{{{}}} R_\\odot$'.format(radius) if not radius==1 and not radius==0 else str(1+9*radius)+'$R_\\odot$')
-        else:
-            plt.plot(m, f, color=col, lw=linewidth, linestyle=linestyle)
+        if linestyle != 'None': #This if statement allows to add text for each bound when using 'All', by using the linestyle 'None'    
+            col=colours[cc]
+            cc=cc+1
+            plt.fill_between(m , f, 1e10, alpha=alpha_val, color=col)
+            linewidth = 1.0
+            if legend_on == 1:
+                plt.plot(m, f, color=col, lw=linewidth, linestyle=linestyle,
+                    label='$10^{{{}}} R_\\odot$'.format(radius) if not radius==1 and not radius==0 else str(1+9*radius)+'$R_\\odot$')
+            else: 
+                plt.plot(m, f, color=col, lw=linewidth, linestyle=linestyle)
     if x > 1e-20 and bounds_on == 1:
         print(boundID)
         plt.text(x, y, labeltext.replace("_", " "), rotation=ang, fontsize=12, ha='center', va='center')
@@ -129,6 +152,9 @@ bounds_citation = bounds
 if 'Lensing' in bounds:
     for i in Lensinglist:
         bounds_citation = np.append(bounds_citation,i)
+if 'All' in bounds:
+    for i in all_bounds:
+        bounds_citation = np.append(bounds_citation,i)
     
 for i in range(len(bounds_citation)): 
     bibdat = addCitation(bounds_citation[i])
@@ -157,8 +183,14 @@ ax.set_xscale('log')
 ax.set_yscale('log')
 ax.xaxis.tick_bottom()
 ax.xaxis.set_tick_params(pad=5)
+legend_tst = 0
 for i in range(len(bounds)):  
-    addConstraint(bounds[i], x = xlist[i], y = ylist[i], ang=anglist[i], linestyle=lines[i], labeltext=labellist[i])
+    if lines[i] == 'None' or legend_tst == 1:
+        addConstraint(bounds[i], x = xlist[i], y = ylist[i], ang=anglist[i], linestyle=lines[i], labeltext=labellist[i], legend_on = 0)
+    else: 
+        addConstraint(bounds[i], x = xlist[i], y = ylist[i], ang=anglist[i], linestyle=lines[i], labeltext=labellist[i], legend_on = 1)
+        legend_tst = 1
+    
 
 
 Msun_min = 1e-18
