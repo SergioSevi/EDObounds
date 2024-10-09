@@ -12,3 +12,4 @@ Subaru-HSC	--	1e-9	3e-3	0	Subaru-HSC
 Lensing		-	1e-5	3e-3	0	Lensing
 Dynamic-heating	--	50	5e-2	-65	Dynamic_Heating
 LVK	-	1.5e1	8e-5	0	LVK
+Binary-evaporation	None 		70	8e-3	-70	Binary_evap.
