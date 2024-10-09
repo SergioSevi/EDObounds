@@ -1,5 +1,5 @@
 These are the items to cite in your plot:
- \cite{Croon:2024rmw,Croon:2020wpr,Croon:2020ouk,Graham:2024hah}
+ \cite{Croon:2024rmw,Croon:2020wpr,Croon:2020ouk,Graham:2024hah,Croon:2022tmr,Qiu:2024muo}
 
 These are the bibitems to add to your mybib file: 
  
@@ -48,11 +48,39 @@ These are the bibitems to add to your mybib file:
 
  
  
- 
  @article{Graham:2024hah,
  author = "Graham, Peter W. and Ramani, Harikrishnan",
  title = "{Constraints on Dark Matter from Dynamical Heating of Stars in Ultrafaint Dwarfs. Part 2: Substructure and the Primordial Power Spectrum}",
  eprint = "2404.01378",
+ archivePrefix = "arXiv",
+ primaryClass = "hep-ph",
+ month = "4",
+ year = "2024"
+ };
+
+ 
+ 
+ @article{Croon:2022tmr,
+ author = "Croon, Djuna and Ipek, Seyda and McKeen, David",
+ title = "{Gravitational wave constraints on extended dark matter structures}",
+ eprint = "2205.15396",
+ archivePrefix = "arXiv",
+ primaryClass = "astro-ph.CO",
+ reportNumber = "IPPP/22/36",
+ doi = "10.1103/PhysRevD.107.063012",
+ journal = "Phys. Rev. D",
+ volume = "107",
+ number = "6",
+ pages = "063012",
+ year = "2023"
+ };
+
+ 
+ 
+ @article{Qiu:2024muo,
+ author = "Qiu, Qiming and Gao, Yu and Tian, Hai-jun and Wang, Kechen and Wang, Zihang and Yang, Xiang-Ming",
+ title = "{Wide Binary Evaporation by Dark Solitons: Implications from the GAIA Catalog}",
+ eprint = "2404.18099",
  archivePrefix = "arXiv",
  primaryClass = "hep-ph",
  month = "4",
