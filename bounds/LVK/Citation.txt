@@ -1,0 +1,17 @@
+#Gravitational wave constraints from ground-based experiments LIGO/Virgo/KAGRA (LVK). These bounds depend on when the EDO binaries were formed; herein, we include those bounds for EDOs formed in the early universe.
+#Fig. 3 (right) in arXiv:2205.15396.
+
+@article{Croon:2022tmr,
+    author = "Croon, Djuna and Ipek, Seyda and McKeen, David",
+    title = "{Gravitational wave constraints on extended dark matter structures}",
+    eprint = "2205.15396",
+    archivePrefix = "arXiv",
+    primaryClass = "astro-ph.CO",
+    reportNumber = "IPPP/22/36",
+    doi = "10.1103/PhysRevD.107.063012",
+    journal = "Phys. Rev. D",
+    volume = "107",
+    number = "6",
+    pages = "063012",
+    year = "2023"
+}
