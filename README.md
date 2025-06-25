@@ -33,15 +33,16 @@ python PlotEDObounds.py --listfile LIST_FILE --outfile OUT_FILE --massdistributi
 ```
 where `LIST_FILE` is a text file containing a list of bounds to be plotted (see `listfiles/list_all.txt` for an example),  `OUT_FILE` is the full filename of the image to be output (e.g. `plots/PBHbounds.pdf`), and `MASS_DISTRIBUTION` allows to plot non-monochromatic set of bounds, following the work in [here](https://arxiv.org/abs/1705.05567). You can use the short flags `-lf`, `-of` and `-md` for specifying the list file and output file. (**Note that you will need the [tools.py/](tools.py/) file in the same folder as PlotEDObounds.py.**)
 
-**Supported mass distributions:** Included mass distributions are `monochromatic` (by default), `lognormal(\sigma,M,M_c)` and `skew_lognormal(\sigma,\alpha,M,Mc)`, where<br>
+**Supported mass distributions:** Included mass distributions are `monochromatic` (by default), `lognormal(\sigma)` and `skew_lognormal(\sigma,\alpha)`, where<br>
 ```math
-{\texttt{lognormal}(\sigma,M,Mc)}=\frac{1}{\sqrt{2 \pi}\sigma M}\exp\left(-\frac{\log\left(\frac{M}{M_c}\right)^2}{2\sigma^2}\right)
+{\texttt{lognormal}(\sigma)}=\frac{1}{\sqrt{2 \pi}\sigma M}\exp\left(-\frac{\log\left(\frac{M}{M_c}\right)^2}{2\sigma^2}\right)
 ```
 <br>and<br>
 
 ```math
-\texttt{skew\_lognormal}(\sigma,\alpha,M,M_c) = \frac{1}{\sqrt{2\pi} \sigma M} \exp\left(-\frac{\log\left(\frac{M}{M_c}\right)^2}{2\sigma^2} \right) \left(1 + \text{erf}\left(\alpha \frac{\log\left(\frac{M}{M_c}\right)}{\sqrt{2} \sigma} \right) \right).
+\texttt{skew\_lognormal}(\sigma,\alpha) = \frac{1}{\sqrt{2\pi} \sigma M} \exp\left(-\frac{\log\left(\frac{M}{M_c}\right)^2}{2\sigma^2} \right) \left(1 + \text{erf}\left(\alpha \frac{\log\left(\frac{M}{M_c}\right)}{\sqrt{2} \sigma} \right) \right),
 ```
+where the code will integrate with respect to $M$ to obtain the new constraints in terms of the new mass scale $M_c$.
 It is possible to add any new function by modifying the files (particularly [PlotEDObounds.py/](PlotEDObounds.py/) and [Mappings.py/](Mappings.py/)). If you would like to see a special function added to the repository, contact us by email and we will be more than happy to include it.<br><br> 
 This code is an extension of Bradley Kavanagh's [pbhbounds](https://github.com/bradkav/PBHbounds) repository. Among the new additions, this code automatically generates the list of citations for all bounds appearing in the created plot in a file called "Cite.txt".
 ### Versions
