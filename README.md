@@ -29,16 +29,16 @@ Some example plots for different EDO radius and shapes can be found in the [plot
 
 You can produce new plots with
 ```
-python PlotEDObounds.py --listfile LIST_FILE --outfile OUT_FILE
+python PlotEDObounds.py --listfile LIST_FILE --outfile OUT_FILE --massdistribution MASS_DISTRIBUTION
 ```
-where `LIST_FILE` is a text file containing a list of bounds to be plotted (see `listfiles/list_all.txt` for an example) and `OUT_FILE` is the full filename of the image to be output (e.g. `plots/PBHbounds.pdf`). You can use the short flags `-lf` and `-of` for specifying the list file and output file. (**Note that you will need the [tools.py/](tools.py/) file in the same folder as PlotEDObounds.py.**)
+where `LIST_FILE` is a text file containing a list of bounds to be plotted (see `listfiles/list_all.txt` for an example),  `OUT_FILE` is the full filename of the image to be output (e.g. `plots/PBHbounds.pdf`), and `MASS_DISTRIBUTION' allows to plot non-monochromatic set of bounds, following the work in [here](https://arxiv.org/abs/1705.05567). You can use the short flags `-lf` and `-of` for specifying the list file and output file. (**Note that you will need the [tools.py/](tools.py/) file in the same folder as PlotEDObounds.py.**)
 
 
 This code is an extension of Bradley Kavanagh's [pbhbounds](https://github.com/bradkav/PBHbounds) repository. Among the new additions, this code automatically generates the list of citations for all bounds appearing in the created plot in a file called "Cite.txt".
 ### Versions
 
 **Version 1.0 (25/06/2024):** Release version. Created for the [paper](https://arxiv.org/abs/2407.02573).
-
+**Version 1.1 (25/06/2024): Added different mass distributions.
 ### Citation
 
 Feel free to use the bounds and code, but please make sure to cite all of the individual plotted bounds (the bibitems for this are automatically generated in the "Cite.txt" file) and this repository through the [paper](https://arxiv.org/abs/2407.02573) (see [here](https://ui.adsabs.harvard.edu/abs/2024arXiv240702573C/exportcitation) for different citation formats).
