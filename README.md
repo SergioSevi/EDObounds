@@ -33,7 +33,7 @@ python PlotEDObounds.py --listfile LIST_FILE --outfile OUT_FILE --massdistributi
 ```
 where `LIST_FILE` is a text file containing a list of bounds to be plotted (see `listfiles/list_all.txt` for an example),  `OUT_FILE` is the full filename of the image to be output (e.g. `plots/PBHbounds.pdf`), and `MASS_DISTRIBUTION` allows to plot non-monochromatic set of bounds, following the work in [here](https://arxiv.org/abs/1705.05567). You can use the short flags `-lf`, `-of` and `-md` for specifying the list file and output file. (**Note that you will need the [tools.py/](tools.py/) file in the same folder as PlotEDObounds.py.**)
 
-**Supported mass distributions:** Included mass distributions are `monochromatic` (by default), `lognormal(\sigma)` and `skew_lognormal(\sigma,\alpha)`, where<br>
+**Supported mass distributions:** Included mass distributions are `'monochromatic'` (by default), `'lognormal(\sigma)'` and `'skew_lognormal(\sigma,\alpha)'`. The entries **must be a string**, and each distribution is defined by<br>
 ```math
 {\texttt{lognormal}(\sigma)}=\frac{1}{\sqrt{2 \pi}\sigma M}\exp\left(-\frac{\log\left(\frac{M}{M_c}\right)^2}{2\sigma^2}\right)
 ```
