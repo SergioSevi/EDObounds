@@ -5,6 +5,7 @@ import matplotlib as mpl
 import argparse
 import tools
 import os
+import mapping
 
 #Specify the plot style
 mpl.rcParams.update({'font.size': 16,'font.family':'serif'})
@@ -30,6 +31,7 @@ mpl.rcParams['legend.edgecolor'] = 'inherit'
 #Default values, overridden if you pass in command line arguments
 listfile_default = "listfiles/bounds_all.txt" 
 outfile_default = "plots/EDO_bounds.pdf"
+massdistribution_default= "monochromatic"
 
 #Load in the filename with the list of bounds and the output filename
 parser = argparse.ArgumentParser(description='...')
@@ -37,6 +39,8 @@ parser.add_argument('-lf','--listfile', help='File containing list of bounds to 
                     type=str, default=listfile_default)
 parser.add_argument('-of','--outfile', help='Filename (with extension) of output plot', 
                     type=str, default=outfile_default)
+parser.add_argument('-md','--massdistribution',help='Choose the mass distribution of EDOs. See README file for choices.',
+                    type=str,default=massdistribution_default)
                     
 #Get the full list of bounds for plotting altogether
 directory = "bounds/"
@@ -53,6 +57,17 @@ def safe_length(arg):
 args = parser.parse_args()
 listfile = args.listfile
 outfile = args.outfile
+supported_mass_distributions=['lognormal','monochromatic','skew_lognormal']
+try:
+    mass_distribution=args.massdistribution
+    if mass_distribution.startswith(tuple(supported_mass_distributions)):
+        pass
+    else:
+        print('Mass distribution not known, using monochromatic as default. Check README file to see supported functions or how to add yours.')
+except:
+    mass_distribution='monochromatic'
+    print('Mass distribution not specified. Monochromatic distribution used as default.')
+
 
 #This small routine gets all lines in the listfile starting with a #, which will be used to identify the shape, radius and constraints.
 with open(listfile, 'r') as file:
@@ -87,25 +102,22 @@ if safe_length(bounds) == 1:
     anglist = np.append(anglist, 3)
     labellist = np.append(labellist, '_')
 
+
+ #-------------------------------------------   
+    
 colours=[(0.698039,0.0156863,0.), (0.937255,0.627451,0.168627),
          (0.72549,0.8,0.0705882),
          (0.317647,0.490196,0.0784314),(0.172549,0.360784,0.0705882),
          (0.360784,0.407843,0.533333),(0.227451,0.239216,0.45098),
          (0.0980392,0.0666667,0.25098),(0.560784,0.52549,0.564706),(0.921569,0.494118,0.431373)]
 
-# if (DARKMODE):
-#     for i, col in enumerate(colors):
-#         if (col == "C1"):
-#             colors[i] = "C5"
-#         if (col == "C2"):
-#             colors[i] = "C6"
 
 def addConstraint(boundID,x = 1e-30,y=1e-4,ang=0, linestyle='-', labeltext='', legend_on=1):
     cc=0
     bounds_on = 0
     
     for radius in range(int(limits[0]),int(limits[1])+1,int(limits[2])):
-        m, f = tools.load_bound(boundID,shape,radius)
+        m,f = tools.load_bound(boundID,shape,radius,mass_distribution)
         if min(f)<1:
             bounds_on = 1
         if linestyle != 'None': #This if statement allows to add text for each bound when using 'All', by using the linestyle 'None'    
@@ -123,12 +135,16 @@ def addConstraint(boundID,x = 1e-30,y=1e-4,ang=0, linestyle='-', labeltext='', l
         plt.text(x, y, labeltext.replace("_", " "), rotation=ang, fontsize=12, ha='center', va='center')
 
 
+ #-------------------------------------------   
+        
 
 #Create the citation list for the last produced plot:
 def addCitation(boundID):
+    #Find the Citation file in bounds folder
     filename = 'bounds/' + boundID + '/Citation.txt'
     lines=' '
     try:
+        #This extracts the citation code and the full bib element. 
         for line in open(filename):
             li=line.strip()
             if not li.startswith("#"):
@@ -138,24 +154,26 @@ def addCitation(boundID):
                     startcite = frstline.find('{')+1
                     endcite = frstline.find(',')
                     frstline = frstline[startcite:endcite]
-    except Exception as e:
+    except:
         frstline = ""
         lines = ""
     return [frstline, str(lines)]
 
-
+#Now create the Cite.txt file with the citation list.
 bibdatlist = []
 cits = open('Cite.txt','w')
 bibitems = 'These are the bibitems to add to your mybib file:'
 citelist = 'These are the items to cite in your plot:\n \\cite{'
 bounds_citation = bounds
+#Special cases if we use the 'Lensing' or 'All' bounds, as we have to cite all papers in those groups.
 if 'Lensing' in bounds:
     for i in Lensinglist:
         bounds_citation = np.append(bounds_citation,i)
 if 'All' in bounds:
     for i in all_bounds:
         bounds_citation = np.append(bounds_citation,i)
-    
+
+#One by one we add all citations, making a special case for the first bound, as it does not require a starting ','.
 for i in range(len(bounds_citation)): 
     bibdat = addCitation(bounds_citation[i])
     if bibdat[0] in bibdatlist or bibdat[0] == "":
@@ -207,14 +225,18 @@ xticks = 10**np.arange(np.floor(np.log10(Msun_min)), np.ceil(np.log10(Msun_max))
 ax.set_xticks(xticks, minor=True)
 ax.set_xticklabels([], minor=True)
     
-ax.set_xlabel(r'$M_\mathrm{EDO}$ [$M_\odot$]')
+if mass_distribution.startswith('monochromatic'):
+    xlabel=r'$M_\mathrm{EDO}$ ' 
+else:
+    xlabel=r'$M_\mathrm{c}$'
+ax.set_xlabel(xlabel+'[$M_{\\odot}$]')
 plt.ylabel(r'$f_\mathrm{DM} = \Omega_\mathrm{EDO}/\Omega_\mathrm{DM}$')
 
 ax_top = ax.twiny()
 ax_top.xaxis.tick_top()
 ax_top.set_xscale('log')
 ax_top.set_xlim(ax.get_xlim())
-ax_top.set_xlabel(r'$M_\mathrm{EDO}$ [g]', labelpad=7)
+ax_top.set_xlabel(xlabel+'[g]', labelpad=7)
 
 ax.legend( loc='best',fontsize='x-small',ncol=2,fancybox=False,title=str(shape)+" $R_{90}$ size:",labelspacing=0.1,handlelength=1,title_fontsize=12,columnspacing=1)
 g_to_Msun = 1/1.989e+33

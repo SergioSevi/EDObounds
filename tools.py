@@ -1,5 +1,6 @@
 import numpy as np
 import os
+import mapping
 
 Lensinglist = ['EROS-2', 'OGLE-IV', 'Subaru-HSC']
 directory = "bounds/"
@@ -24,7 +25,7 @@ def min_function(x, all_points):
             min_value = min(min_value, y_value)
     return min_value
 
-def load_bound(boundID, shape, radius):
+def load_bound(boundID, shape, radius, mass_distribution):
     all_points = []
     min_x = np.inf
     max_x = -np.inf
@@ -37,6 +38,7 @@ def load_bound(boundID, shape, radius):
         for i in range(len(CombiningList)):
             try:
                 m1, f1 = np.loadtxt('bounds/' + CombiningList[i] + '/' + shape + '/r' + str(radius) +'.txt', unpack=True)
+                m1, f1 = mapping.mapping_fn(m1, f1, mass_distribution)
             except:
                 try:
                     # Try finding the closest available radius file
@@ -45,22 +47,23 @@ def load_bound(boundID, shape, radius):
                     rinfiles = [max(radius, int(x[x.index("/r")+2:x.index(".")])) for x in files]
                     rinfiles = min([x for x in rinfiles if x != radius])
                     m1, f1 = np.loadtxt('bounds/' + CombiningList[i] + '/' + shape + '/r' + str(rinfiles) +'.txt', unpack=True)
+                    m1, f1 = mapping.mapping_fn(m1, f1, mass_distribution)
                 except:
                     # Fallback data 
                     m1, f1 = [[11+i,10+i], [11+i,9+i]]
-            
             all_points.append((m1, f1))
             min_x = min(min(m1), min_x)  # Update minimum x value
             max_x = max(max(m1), max_x)  # Update maximum x value
 
         # Ensure interpolation only happens within the common x range
         m1 = np.linspace(np.log10(min_x), np.log10(max_x), 10000)
-        m = [10**x for x in m1]
+        m = 10**m1
         f = [min_function(10**x, all_points) for x in m1]  # Call min_function for each x value
     else:
         # If it's not lensing, just load the file normally
         try:
             m, f = np.loadtxt('bounds/' + boundID + '/' + shape + '/r' + str(radius) +'.txt', unpack=True)
+            m, f = mapping.mapping_fn(m, f, mass_distribution)
         except:
             try:
                 directory_path = 'bounds/' + boundID + '/' + shape 
@@ -68,7 +71,7 @@ def load_bound(boundID, shape, radius):
                 rinfiles = [max(radius, int(x[x.index("/r")+2:x.index(".")])) for x in files]
                 rinfiles = min([x for x in rinfiles if x != radius])
                 m, f = np.loadtxt('bounds/' + boundID + '/' + shape + '/r' + str(rinfiles) +'.txt', unpack=True)
+                m, f = mapping.mapping_fn(m, f, mass_distribution)
             except:
-                m, f = [[11, 10], [11, 9]]
-
+                m, f = [[1100, 1], [1100, 9]]
     return m, f
