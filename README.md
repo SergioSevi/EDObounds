@@ -38,8 +38,8 @@ where `LIST_FILE` is a text file containing a list of bounds to be plotted (see 
 This code is an extension of Bradley Kavanagh's [pbhbounds](https://github.com/bradkav/PBHbounds) repository. Among the new additions, this code automatically generates the list of citations for all bounds appearing in the created plot in a file called "Cite.txt".
 ### Versions
 
-**Version 1.0 (25/06/2024):** Release version. Created for the [paper](https://arxiv.org/abs/2407.02573).
-**Version 1.1 (25/06/2024): Added different mass distributions.
+**Version 1.0 (25/06/2024):** Release version. Created for the [paper](https://arxiv.org/abs/2407.02573).<br>
+**Version 1.1 (25/06/2024):** Added different mass distributions.
 ### Citation
 
 Feel free to use the bounds and code, but please make sure to cite all of the individual plotted bounds (the bibitems for this are automatically generated in the "Cite.txt" file) and this repository through the [paper](https://arxiv.org/abs/2407.02573) (see [here](https://ui.adsabs.harvard.edu/abs/2024arXiv240702573C/exportcitation) for different citation formats).
