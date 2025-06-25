@@ -40,7 +40,8 @@ where `LIST_FILE` is a text file containing a list of bounds to be plotted (see 
 <br>and<br>
 
 ```math
-{\texttt{skew_lognormal}(\sigma,\alpha,M,Mc)}=\frac{1}{\sqrt{2 \pi}\sigma M}\exp\left(-\frac{\log\left(\frac{M}{M_c}\right)^2}{2\sigma^2}\right)\left(1 + \text{erf}\left(\alpha \frac{\log(\frac{M}{M_c})}{\sqrt{2}sigma}\right)\right)
+\texttt{skew\_lognormal}(\sigma,\alpha,M,M_c) = \frac{1}{\sqrt{2\pi} \sigma M} \exp\left(-\frac{\log\left(\frac{M}{M_c}\right)^2}{2\sigma^2} \right) \left(1 + \text{erf}\left(\alpha \frac{\log\left(\frac{M}{M_c}\right)}{\sqrt{2} \sigma} \right) \right)
+
 ```
 
 This code is an extension of Bradley Kavanagh's [pbhbounds](https://github.com/bradkav/PBHbounds) repository. Among the new additions, this code automatically generates the list of citations for all bounds appearing in the created plot in a file called "Cite.txt".
