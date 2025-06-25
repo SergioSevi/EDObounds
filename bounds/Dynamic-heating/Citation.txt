@@ -1,5 +1,5 @@
 #Fig.5 right in ArXiv:2404.01378
-
+#Constraints from the dynamical heating of stars. These were calculated for a different cut-off for the NFW sub halo density function; they are only consistent with our parametrisation until R_90=10^6.
 
 @article{Graham:2024hah,
     author = "Graham, Peter W. and Ramani, Harikrishnan",
