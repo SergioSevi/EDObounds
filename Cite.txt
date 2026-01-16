@@ -1,5 +1,5 @@
 These are the items to cite in your plot:
- \cite{Croon:2024rmw,Croon:2020wpr,Croon:2020ouk,Graham:2024hah,Croon:2022tmr,Qiu:2024muo}
+ \cite{Croon:2024rmw,Croon:2020wpr,Croon:2020ouk,Croon:2022tmr,Qiu:2024muo,Croon:2025yfj,Graham:2024hah}
 
 These are the bibitems to add to your mybib file: 
  
@@ -48,18 +48,6 @@ These are the bibitems to add to your mybib file:
 
  
  
- @article{Graham:2024hah,
- author = "Graham, Peter W. and Ramani, Harikrishnan",
- title = "{Constraints on Dark Matter from Dynamical Heating of Stars in Ultrafaint Dwarfs. Part 2: Substructure and the Primordial Power Spectrum}",
- eprint = "2404.01378",
- archivePrefix = "arXiv",
- primaryClass = "hep-ph",
- month = "4",
- year = "2024"
- };
-
- 
- 
  @article{Croon:2022tmr,
  author = "Croon, Djuna and Ipek, Seyda and McKeen, David",
  title = "{Gravitational wave constraints on extended dark matter structures}",
@@ -81,6 +69,31 @@ These are the bibitems to add to your mybib file:
  author = "Qiu, Qiming and Gao, Yu and Tian, Hai-jun and Wang, Kechen and Wang, Zihang and Yang, Xiang-Ming",
  title = "{Wide Binary Evaporation by Dark Solitons: Implications from the GAIA Catalog}",
  eprint = "2404.18099",
+ archivePrefix = "arXiv",
+ primaryClass = "hep-ph",
+ month = "4",
+ year = "2024"
+ };
+
+ 
+ 
+ @article{Croon:2025yfj,
+ author = "Croon, Djuna and Crossey, Benedict and Diego, Jose Maria and Kavanagh, Bradley J. and Palencia, Jose Maria",
+ title = "{Caustic crossings in giant arcs with extended dark matter objects}",
+ eprint = "2511.20761",
+ archivePrefix = "arXiv",
+ primaryClass = "astro-ph.CO",
+ reportNumber = "IPPP/25/82",
+ month = "11",
+ year = "2025"
+ };
+
+ 
+ 
+ @article{Graham:2024hah,
+ author = "Graham, Peter W. and Ramani, Harikrishnan",
+ title = "{Constraints on Dark Matter from Dynamical Heating of Stars in Ultrafaint Dwarfs. Part 2: Substructure and the Primordial Power Spectrum}",
+ eprint = "2404.01378",
  archivePrefix = "arXiv",
  primaryClass = "hep-ph",
  month = "4",

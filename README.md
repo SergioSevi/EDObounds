@@ -49,6 +49,7 @@ This code is an extension of Bradley Kavanagh's [pbhbounds](https://github.com/b
 
 **Version 1.0 (25/06/2024):** Release version. Created for the [paper](https://arxiv.org/abs/2407.02573).<br>
 **Version 1.1 (25/06/2024):** Added different mass distributions.
+**(15/01/2025):** Added Icarus bounds from 2511.20761.
 ### Citation
 
 Feel free to use the bounds and code, but please make sure to cite all of the individual plotted bounds (the bibitems for this are automatically generated in the "Cite.txt" file) and this repository through the [paper](https://arxiv.org/abs/2407.02573) (see [here](https://ui.adsabs.harvard.edu/abs/2024arXiv240702573C/exportcitation) for different citation formats).

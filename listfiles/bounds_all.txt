@@ -1,8 +1,8 @@
 #Shape: (Choose from NFW, Uniform, Boson or UCMH)
-Boson
+NFW
 
 #Radius (r): rmin, rmax, rjumps, where R_90=10^r RSun
-		-1	5	3
+		-1	5	2
 
 # Bound,     linestyle,  x,         y,        rotation, display name
 CMBAccretion	 -	700	1e-4	-85	CMB
@@ -13,4 +13,5 @@ Subaru-HSC	-	1e-9	3e-3	0	Subaru-HSC
 Dynamic-heating	--	200	5e-2	-65	Dyn._Heating
 LVK	-	1.5e2	8e-5	0	LVK
 Binary-evaporation - 70	8e-3	-70	Binary_evap.
+Icarus	-	1 	2e-2 0 Icarus
 #All - 5 5 5 _

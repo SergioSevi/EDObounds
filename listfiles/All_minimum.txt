@@ -2,17 +2,18 @@
 Boson
 
 #Radius (r): rmin, rmax, rjumps, where R_90=10^r RSun
-		-1	6	1
+		-1	6	2
 
 # Bound,     		linestyle,	x,	y,    rotation, displayed name
 CMBAccretion		 --		700	1e-4	-85	CMB
 EROS-2			None		1e-2	1e-2	0	EROS-2
 OGLE-IV			None		1e-5	7e-3	0	OGLE-IV
 Subaru-HSC		None		1e-9	3e-3	0	Subaru-HSC
-#Lensing		-		1e-5	3e-3	0	Lensing
+Lensing		--		1e-5	3e-3	0	_
 Dynamic-heating		None		500	5e-2	-65	Dyn.-heating
 LVK			None		1.5e2	8e-5	0	LVK
-Binary-evaporation	None 		70	8e-3	-70	Binary_evap.
+Binary-evaporation	-- 		70	8e-3	-70	Binary_evap.
+Icarus			--		1 	2e-2	0	Icarus
 All 			- 		5 	5 	5 _	
 
 

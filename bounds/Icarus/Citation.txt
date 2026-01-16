@@ -1,0 +1,13 @@
+#Fig.7 in ArXiv:2511.20761
+#Icarus constraints
+
+@article{Croon:2025yfj,
+    author = "Croon, Djuna and Crossey, Benedict and Diego, Jose Maria and Kavanagh, Bradley J. and Palencia, Jose Maria",
+    title = "{Caustic crossings in giant arcs with extended dark matter objects}",
+    eprint = "2511.20761",
+    archivePrefix = "arXiv",
+    primaryClass = "astro-ph.CO",
+    reportNumber = "IPPP/25/82",
+    month = "11",
+    year = "2025"
+}
