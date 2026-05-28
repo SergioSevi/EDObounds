@@ -1,0 +1,12 @@
+#Fig.4 in ArXiv:2404.18099
+#Effect of EDOs on the evaporation of wide binaries under a timescale of 10Gyrs
+
+@article{Qiu:2024muo,
+    author = "Qiu, Qiming and Gao, Yu and Tian, Hai-jun and Wang, Kechen and Wang, Zihang and Yang, Xiang-Ming",
+    title = "{Wide Binary Evaporation by Dark Solitons: Implications from the GAIA Catalog}",
+    eprint = "2404.18099",
+    archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
+    month = "4",
+    year = "2024"
+}

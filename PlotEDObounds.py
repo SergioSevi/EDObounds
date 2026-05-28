@@ -117,7 +117,7 @@ def addConstraint(boundID,x = 1e-30,y=1e-4,ang=0, linestyle='-', labeltext='', l
     bounds_on = 0
     
     for radius in range(int(limits[0]),int(limits[1])+1,int(limits[2])):
-        m,f = tools.load_bound(boundID,shape,radius,mass_distribution)
+        m,f = tools.load_bound(boundID, shape, radius, mass_distribution)
         if min(f)<1:
             bounds_on = 1
         if linestyle != 'None': #This if statement allows to add text for each bound when using 'All', by using the linestyle 'None'    

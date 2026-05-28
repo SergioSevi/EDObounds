@@ -1,5 +1,5 @@
 These are the items to cite in your plot:
- \cite{Croon:2024rmw,Croon:2020wpr,Croon:2020ouk,Croon:2022tmr,Qiu:2024muo,Croon:2025yfj,Graham:2024hah}
+ \cite{Croon:2024rmw,Croon:2020wpr,Croon:2020ouk,Graham:2024hah,Croon:2022tmr,Ramirez:2022mys,Croon:2025yfj}
 
 These are the bibitems to add to your mybib file: 
  
@@ -48,6 +48,18 @@ These are the bibitems to add to your mybib file:
 
  
  
+ @article{Graham:2024hah,
+ author = "Graham, Peter W. and Ramani, Harikrishnan",
+ title = "{Constraints on Dark Matter from Dynamical Heating of Stars in Ultrafaint Dwarfs. Part 2: Substructure and the Primordial Power Spectrum}",
+ eprint = "2404.01378",
+ archivePrefix = "arXiv",
+ primaryClass = "hep-ph",
+ month = "4",
+ year = "2024"
+ };
+
+ 
+ 
  @article{Croon:2022tmr,
  author = "Croon, Djuna and Ipek, Seyda and McKeen, David",
  title = "{Gravitational wave constraints on extended dark matter structures}",
@@ -65,14 +77,20 @@ These are the bibitems to add to your mybib file:
 
  
  
- @article{Qiu:2024muo,
- author = "Qiu, Qiming and Gao, Yu and Tian, Hai-jun and Wang, Kechen and Wang, Zihang and Yang, Xiang-Ming",
- title = "{Wide Binary Evaporation by Dark Solitons: Implications from the GAIA Catalog}",
- eprint = "2404.18099",
+ 
+ 
+ @article{Ramirez:2022mys,
+ author = "Ramirez, Edward D. and Buckley, Matthew R.",
+ title = "{Constraining dark matter substructure with Gaia wide binaries}",
+ eprint = "2209.08100",
  archivePrefix = "arXiv",
  primaryClass = "hep-ph",
- month = "4",
- year = "2024"
+ doi = "10.1093/mnras/stad2583",
+ journal = "Mon. Not. Roy. Astron. Soc.",
+ volume = "525",
+ number = "4",
+ pages = "5813--5830",
+ year = "2023"
  };
 
  
@@ -86,17 +104,5 @@ These are the bibitems to add to your mybib file:
  reportNumber = "IPPP/25/82",
  month = "11",
  year = "2025"
- };
-
- 
- 
- @article{Graham:2024hah,
- author = "Graham, Peter W. and Ramani, Harikrishnan",
- title = "{Constraints on Dark Matter from Dynamical Heating of Stars in Ultrafaint Dwarfs. Part 2: Substructure and the Primordial Power Spectrum}",
- eprint = "2404.01378",
- archivePrefix = "arXiv",
- primaryClass = "hep-ph",
- month = "4",
- year = "2024"
  };
 
