@@ -21,7 +21,7 @@ If you'd like to contribute to the repository with new bounds, you can either:
 	* Update the [bounds/README.md](https://github.com/SergioSevi/EDObounds/blob/master/bounds/README.md) file with information about the new bound.
 	* Submit a pull request
 2. Create an issue on the GitHub repository with a link to the paper/bound you believe is missing.  
-3. Contact us directly at sergio.sevillano-munoz@durham.ac.uk or djuna.l.croon@durham.ac.uk and let us know which bound you think should be added.
+3. Contact us directly at sergiosm@sas.upenn.edu or djuna.l.croon@durham.ac.uk and let us know which bound you think should be added.
 
 ### Plots
 
