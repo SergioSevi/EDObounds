@@ -1,0 +1,13 @@
+#2609.04308
+#Supernova microlensing constraints using LSST.
+
+@article{Croon:2026uqm,
+    author = "Croon, Djuna and Sevillano Mu{\~n}oz, Sergio and Zumalacarregui, Miguel",
+    title = "{Supernova microlensing as a probe of ultracompact minihalos and primordial cosmology}",
+    eprint = "2609.04308",
+    archivePrefix = "arXiv",
+    primaryClass = "astro-ph.CO",
+    reportNumber = "IPPP/26/61, IFT-UAM/CSIC-26-123",
+    month = "9",
+    year = "2026"
+}
