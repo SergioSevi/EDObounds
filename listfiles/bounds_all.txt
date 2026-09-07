@@ -1,5 +1,5 @@
 #Shape: (Choose from NFW, Uniform, Boson or UCMH)
-NFW
+UCMH
 
 #Radius (r): rmin, rmax, rjumps, where R_90=10^r RSun
 		-1	5	2
@@ -12,6 +12,8 @@ Subaru-HSC	-	1e-9	3e-3	0	Subaru-HSC
 #Lensing		-	1e-5	3e-3	0	Lensing
 Dynamic-heating	--	200	5e-2	-65	Dyn._Heating
 LVK	-	1.5e2	8e-5	0	LVK
-Binary-evaporation - 70	8e-3	-70	Binary_evap.
+#Binary-survival - 70	8e-3	-70	Binary_surv.
 Icarus	-	1 	2e-2 0 Icarus
+SN-lensing-DES  -	100	2e-1	0	SNe._lensing
+#SN-lensing-LSST  --	100	2e-3	0	SNe._lensing_(LSST)
 #All - 5 5 5 _

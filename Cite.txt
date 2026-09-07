@@ -1,5 +1,5 @@
 These are the items to cite in your plot:
- \cite{Croon:2024rmw,Croon:2020wpr,Croon:2020ouk,Graham:2024hah,Croon:2022tmr,Ramirez:2022mys,Croon:2025yfj}
+ \cite{Croon:2024rmw,Croon:2020wpr,Croon:2020ouk,Graham:2024hah,Croon:2022tmr,Croon:2025yfj,Croon:2026uqm}
 
 These are the bibitems to add to your mybib file: 
  
@@ -77,24 +77,6 @@ These are the bibitems to add to your mybib file:
 
  
  
- 
- 
- @article{Ramirez:2022mys,
- author = "Ramirez, Edward D. and Buckley, Matthew R.",
- title = "{Constraining dark matter substructure with Gaia wide binaries}",
- eprint = "2209.08100",
- archivePrefix = "arXiv",
- primaryClass = "hep-ph",
- doi = "10.1093/mnras/stad2583",
- journal = "Mon. Not. Roy. Astron. Soc.",
- volume = "525",
- number = "4",
- pages = "5813--5830",
- year = "2023"
- };
-
- 
- 
  @article{Croon:2025yfj,
  author = "Croon, Djuna and Crossey, Benedict and Diego, Jose Maria and Kavanagh, Bradley J. and Palencia, Jose Maria",
  title = "{Caustic crossings in giant arcs with extended dark matter objects}",
@@ -104,5 +86,18 @@ These are the bibitems to add to your mybib file:
  reportNumber = "IPPP/25/82",
  month = "11",
  year = "2025"
+ };
+
+ 
+ 
+ @article{Croon:2026uqm,
+ author = "Croon, Djuna and Sevillano Mu{\~n}oz, Sergio and Zumalacarregui, Miguel",
+ title = "{Supernova microlensing as a probe of ultracompact minihalos and primordial cosmology}",
+ eprint = "2609.04308",
+ archivePrefix = "arXiv",
+ primaryClass = "astro-ph.CO",
+ reportNumber = "IPPP/26/61, IFT-UAM/CSIC-26-123",
+ month = "9",
+ year = "2026"
  };
 
