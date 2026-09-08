@@ -9,9 +9,22 @@
 
 ### Bounds
 
-The list of all available, tabulated bounds can be found in the [bounds/](bounds/) folder, with a dedicated sub-folder for each shape: NFW subhalos, boson stars, uniform spheres and ultra-compact minihalos (see the [paper](https://arxiv.org/abs/2407.02573) for a description of their density functions). You can use the listfile function "All" to produce the minimum of all bounds.
+The list of all available, tabulated bounds can be found in the [bounds/](bounds/) folder, with a dedicated sub-folder for each shape:
+* **NFW subhalos**: Given by
 
-In Section 3 of the [paper](https://arxiv.org/abs/2407.02573) we explain in detail how to use the code.
+$$
+\rho_{\rm NFW}(r)=\frac{\rho_0}{\frac{r}{R_s}\left(1+\frac{r}{R_s}\right)^2}.
+$$
+
+with a total subhalo radius of $R=100R_s$, meaning $R_{90}\approx 0.69R$.
+  * **Boson stars**: Given by solving the collapse of a scalar field under its own gravitational potential. See Eq.(2.6) in [paper](https://arxiv.org/abs/2407.02573) for the full system of equations. <br>
+ * **Uniform spheres**: Objects of constant density, such that $\rho_{\rm Uni}(r)\neq 0$ for $r<R$.
+* **Ultra-compact minihalos (UCMH)**: Given by $\rho_{\rm UCMH}(r)\propto r^{-9/4}$.
+* **Self-similar subhalos (SS)**: Given by $\rho_{\rm UCMH}(r)\propto r^{-3/2}$.
+
+See the [paper](https://arxiv.org/abs/2407.02573) for a further description of their density functions. 
+
+You can use the listfile function "All" to produce the minimum of all bounds. In Section 3 of the [paper](https://arxiv.org/abs/2407.02573) we explain in detail how to use the code.
 
 ### Contributing
 
@@ -49,7 +62,9 @@ This code is an extension of Bradley Kavanagh's [pbhbounds](https://github.com/b
 
 **Version 1.0 (25/06/2024):** Release version. Created for the [paper](https://arxiv.org/abs/2407.02573).<br>
 **Version 1.1 (25/06/2024):** Added different mass distributions.<br>
-**(15/01/2025):** Added Icarus bounds from 2511.20761.
+**(15/01/2025):** Added Icarus bounds from 2511.20761. <br>
+**(08/09/2026):**  Added Supernovae bounds from  DES and LSST (projections) from 2609.04308 and Wide-binary evaporation from ultra-faint dwarfs from 2607.18185. <br>
+
 ### Citation
 
 Feel free to use the bounds and code, but please make sure to cite all of the individual plotted bounds (the bibitems for this are automatically generated in the "Cite.txt" file) and this repository through the [paper](https://arxiv.org/abs/2407.02573) (see [here](https://ui.adsabs.harvard.edu/abs/2024arXiv240702573C/exportcitation) for different citation formats).
