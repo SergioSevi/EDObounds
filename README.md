@@ -20,7 +20,7 @@ with a total subhalo radius of $R=100R_s$, meaning $R_{90}\approx 0.69R$.
   * **Boson stars**: Given by solving the collapse of a scalar field under its own gravitational potential. See Eq.(2.6) in [paper](https://arxiv.org/abs/2407.02573) for the full system of equations. <br>
  * **Uniform spheres**: Objects of constant density, such that $\rho_{\rm Uni}(r)\neq 0$ for $r<R$.
 * **Ultra-compact minihalos (UCMH)**: Given by $\rho_{\rm UCMH}(r)\propto r^{-9/4}$.
-* **Self-similar subhalos (SS)**: Given by $\rho_{\rm UCMH}(r)\propto r^{-3/2}$.
+* **Self-similar subhalos (SS)**: Given by $\rho_{\rm SS}(r)\propto r^{-3/2}$.
 
 See the [paper](https://arxiv.org/abs/2407.02573) for a further description of their density functions. 
 
